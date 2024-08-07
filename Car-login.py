@@ -1,0 +1,25 @@
+import time
+from splinter import Browser
+browser = Browser('chrome')
+"Sets browser as chrome"
+"Go to site regiser2park with location 3830 parkdale, SA, TX"
+browser.visit('https://www.register2park.com/register')
+browser.find_by_id('propertyName').fill('38') 
+browser.find_by_id('confirmProperty').click()
+browser.find_by_value('22462')
+browser.choose('property', '22462')
+time.sleep(5)
+browser.find_by_id('confirmPropertySelection').click()
+browser.find_by_id('registrationTypeVisitor').click()
+time.sleep(5)
+browser.find_by_id('guestCode').fill('T90L1V1A')
+browser.find_by_id('propertyGuestCode').click()
+time.sleep(5)
+browser.find_by_id('vehicleMake').fill('Toyota')
+browser.find_by_id('vehicleModel').fill('Corolla')
+browser.find_by_id('vehicleLicensePlate').fill('AJN68F')
+browser.find_by_id('vehicleLicensePlateConfirm').fill('AJN68F')
+browser.find_by_id('vehicleInformationVIP').click()
+time.sleep(15)
+sceenshot_path = browser.screenshot('/home/vboxuser/SSofprogress/your_screenshot.png', full=True)
+print('we got here')
